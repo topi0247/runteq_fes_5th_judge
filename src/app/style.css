@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+/* ===================================================== */
+/*      Template name : momiji                           */
+/*      Copyright : 2023 Serenity                        */
+/*      利用規約を遵守の上、ご利用ください。             */
+/*      二次配布・販売は禁止しております。               */
+/*      https://serenity.talemaze.xyz/                   */
+/*      Serenityはとぴが別名義で運営しているサイトです   */
+/* ===================================================== */
+
+/* ==== 配色 ==== */
+:root {
+  --theme-color1: #f8a764;
+  --theme-color1-light: #f7ccaa;
+  --theme-color1-dark: #bb9270;
+  --theme-color2: #9896ee;
+  --color-white: #fff;
+  --color-link: var(--theme-color2);
+  --text-color: #3a3a3a;
+  --bg-color: #ec6f6f;
+  --border-color: #ff7970;
+}
+
+/* ==== 全体 ==== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background-image: url("/images/momiji_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* 紅葉パーティクル */
+#particles-js {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  text-align: start;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+}
+
+article {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+
+section {
+  width: 100%;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.747);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.747);
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+  z-index: 1;
+}
+
+footer p {
+  margin: 0;
+  text-align: end;
+  padding-right: 20px;
+}
+
+hr {
+  border: none;
+  text-align: center;
+  overflow: visible;
+  margin: 20px auto;
+}
+
+hr::after {
+  content: "";
+  background-image: url("/images/momiji_icon.png");
+  background-repeat: space;
+  display: inline-block;
+  height: 16px;
+  width: 60px;
+  line-height: 30px;
+  position: relative;
+}
