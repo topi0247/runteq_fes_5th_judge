@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
 
 export async function GET(req, { params }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}?sheet=${params.id}`);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
+  const res = await fetch(`${API_URL}?sheet=${params.id}`);
+
+  if (!res.ok) {
+    return NextResponse.error();
+  }
+
   const data = await res.json();
   let dataJson = {
     ...data,
