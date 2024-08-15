@@ -1,4 +1,5 @@
-import TimelineItem from "../timelineItem";
+import TimelineItem from "@/components/timelineItem";
+import TimelineIcon from "@/components/timelineIcon";
 
 export default function Timeline({ data }) {
   return (
@@ -8,7 +9,7 @@ export default function Timeline({ data }) {
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.75rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-blue-300 before:to-transparent">
             {data.map((item, i) => (
               <TimelineItem key={i} title={item.title} date={item.date} shortDescription={item.shortDescription} description={item.description}>
-                {item.icon}
+                <TimelineIcon iconType={item.iconType} />
               </TimelineItem>
             ))}
           </div>
