@@ -8,7 +8,7 @@ export default function TimelineItem({ title, date, shortDescription, descriptio
           <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow md:order-1">
             {children}
           </div>
-          <time className="text-sm font-medium text-indigo-500 md:w-28">{date}</time>
+          <time className="text-sm font-medium text-slate-500 md:w-28">{date}</time>
         </div>
         <div className="text-slate-500 ml-14"><span className="text-slate-900 font-bold">{title}</span></div>
       </div>

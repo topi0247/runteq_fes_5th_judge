@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import remarkBreaks from "remark-breaks"
+import remarkBreaks from "remark-breaks";
 
 export default function MarkdownComponent({ content }) {
   return (

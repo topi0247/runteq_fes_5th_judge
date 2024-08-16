@@ -5,7 +5,7 @@ import ZennArticle from "@/components/zennArticle";
 import QiitaArticle from "@/components/qiitaArticle";
 import MarkdownComponent from "@/components/markdown";
 
-export default function Card({ img, term, name, shortDescription, description, xUrl, timesUrl, zennId, qiitaId, lists, timeline }) {
+export default function Card({ img, term, name, shortDescription, description, xUrl, timesUrl, noteUrl, githubUrl, zennId, qiitaId, lists, timeline }) {
   return (
     <section className="p-4 max-w-[1000px] w-full">
       <div className="flex flex-col justify-center items-center gap-4 w-full relative">
@@ -20,6 +20,8 @@ export default function Card({ img, term, name, shortDescription, description, x
           <div className="flex justify-center items-center gap-4">
             {xUrl && <LinkButton href={xUrl} addLinkClass="px-4 py-2" target>X</LinkButton>}
             {timesUrl && <LinkButton href={timesUrl} addLinkClass="px-4 py-2" target>times</LinkButton>}
+            {noteUrl && <LinkButton href={noteUrl} addLinkClass="px-4 py-2" target>Note</LinkButton>}
+            {githubUrl && <LinkButton href={githubUrl} addLinkClass="px-4 py-2" target>GitHub</LinkButton>}
           </div>
         </div>
         <div className="w-full flex flex-col justify-center items-start gap-8 md:flex-row">
@@ -33,22 +35,24 @@ export default function Card({ img, term, name, shortDescription, description, x
         </div>
         <hr />
         <Timeline data={timeline} />
-        <hr />
         {(zennId || qiitaId) &&
-          <div className="w-full">
-            <div className="flex w-full gap-3 justify-center items-center flex-col">
-              {qiitaId &&
-                <div className="w-full p-8 border border-green-500 bg-green-400 bg-opacity-20">
-                  <QiitaArticle username={qiitaId} />
-                </div>
-              }
-              {zennId &&
-                <div className="w-full p-8 border border-blue-500 bg-blue-400 bg-opacity-20">
-                  <ZennArticle username={zennId} />
-                </div>
-              }
+          <>
+            <hr />
+            <div className="w-full">
+              <div className="flex w-full gap-3 justify-center items-center flex-col">
+                {qiitaId &&
+                  <div className="w-full p-8 border border-green-500 bg-green-400 bg-opacity-20">
+                    <QiitaArticle username={qiitaId} />
+                  </div>
+                }
+                {zennId &&
+                  <div className="w-full p-8 border border-blue-500 bg-blue-400 bg-opacity-20">
+                    <ZennArticle username={zennId} />
+                  </div>
+                }
+              </div>
             </div>
-          </div>
+          </>
         }
       </div>
       <div className="mt-8"><LinkButton href="/judge" addLinkClass="px-4 py-2">戻る</LinkButton></div>
