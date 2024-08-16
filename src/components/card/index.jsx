@@ -3,6 +3,7 @@ import LinkButton from "@/components/link";
 import Timeline from "@/components/timeline";
 import ZennArticle from "@/components/zennArticle";
 import QiitaArticle from "@/components/qiitaArticle";
+import MarkdownComponent from "@/components/markdown";
 
 export default function Card({ img, term, name, shortDescription, description, xUrl, timesUrl, zennId, qiitaId, lists, timeline }) {
   return (
@@ -22,8 +23,8 @@ export default function Card({ img, term, name, shortDescription, description, x
           </div>
         </div>
         <div className="w-full flex flex-col justify-center items-start gap-8 md:flex-row">
-          <p className="w-full md:w-1/2 bg-white p-8">{description}</p>
-          <div className="md:w-1/2 bg-orange-300 bg-opacity-40 border-orange-500 border p-8 text-slate-800">
+          <div className="w-full md:w-1/2 bg-white p-8"><MarkdownComponent content={description} /></div>
+          <div className="w-full md:w-1/2 bg-orange-300 bg-opacity-40 border-orange-500 border p-8 text-slate-800">
             <h3 className="text-2xl">こんな方におすすめ！</h3>
             <ul className="list-disc ml-8 mt-4">
               {lists.map((list, i) => <li key={i}>{list}</li>)}

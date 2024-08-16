@@ -1,3 +1,5 @@
+import MarkdownComponent from "@/components/markdown";
+
 export default function TimelineItem({ title, date, shortDescription, description, children }) {
   return (
     <div className="relative">
@@ -8,9 +10,9 @@ export default function TimelineItem({ title, date, shortDescription, descriptio
           </div>
           <time className="text-sm font-medium text-indigo-500 md:w-28">{date}</time>
         </div>
-        <div className="text-slate-500 ml-14"><span className="text-slate-900 font-bold">{title}</span> {shortDescription}</div>
+        <div className="text-slate-500 ml-14"><span className="text-slate-900 font-bold">{title}</span></div>
       </div>
-      <div className="bg-white p-4 rounded border border-slate-200 text-slate-500 shadow ml-14 md:ml-44">{description}</div>
+      <div className="bg-white p-4 rounded border border-slate-200 text-slate-500 shadow ml-14 md:ml-44"><MarkdownComponent content={description} /></div>
     </div>
   )
 }
