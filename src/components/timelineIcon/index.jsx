@@ -1,6 +1,7 @@
 import AlumniIcon from "../alumniIcon";
 import CalendarIcon from "../calendarIcon";
 import CurrentIcon from "../currentIcon";
+import RuntequnIcon from "../runtequnIcon";
 
 export default function TimelineIcon({ iconType }) {
   switch (iconType) {
@@ -13,7 +14,9 @@ export default function TimelineIcon({ iconType }) {
         <AlumniIcon />
       )
     case "runteq":
-      return <>RUNTEQ</>
+      return (
+        <RuntequnIcon />
+      )
     case "current":
       return (
         <CurrentIcon />
