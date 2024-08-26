@@ -4,7 +4,7 @@ export default function AppLayout({ children }) {
       <main className="flex-grow mt-12 m-auto">
         {children}
       </main>
-      <footer className="text-black my-4 text-center w-full">©第5回RUNTEQ祭運営</footer>
+      <footer className="text-black my-4 text-center w-full md:text-white">©第5回RUNTEQ祭運営</footer>
     </div>
   );
 }
