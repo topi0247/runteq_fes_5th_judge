@@ -5,7 +5,7 @@ import ZennArticle from "@/components/zennArticle";
 import QiitaArticle from "@/components/qiitaArticle";
 import MarkdownComponent from "@/components/markdown";
 
-export default function Card({ img, term, name, shortDescription, description, xUrl, timesUrl, noteUrl, githubUrl, zennId, qiitaId, lists, timeline }) {
+export default function Card({ img, term, name, shortDescription, description, operationComment, other, xUrl, timesUrl, noteUrl, notionUrl, githubUrl, zennId, qiitaId, lists, timeline }) {
   return (
     <section className="p-4 max-w-[1000px] w-full">
       <div className="flex flex-col justify-center items-center gap-4 w-full relative">
@@ -21,16 +21,28 @@ export default function Card({ img, term, name, shortDescription, description, x
             {xUrl && <LinkButton href={xUrl} addLinkClass="px-4 py-2" target>X</LinkButton>}
             {timesUrl && <LinkButton href={timesUrl} addLinkClass="px-4 py-2" target>times</LinkButton>}
             {noteUrl && <LinkButton href={noteUrl} addLinkClass="px-4 py-2" target>Note</LinkButton>}
+            {notionUrl && <LinkButton href={notionUrl} addLinkClass="px-4 py-2" target>Notion</LinkButton>}
             {githubUrl && <LinkButton href={githubUrl} addLinkClass="px-4 py-2" target>GitHub</LinkButton>}
           </div>
         </div>
-        <div className="w-full flex flex-col justify-center items-start gap-8 md:flex-row">
-          <div className="w-full md:w-1/2 bg-white p-8"><MarkdownComponent content={description} /></div>
-          <div className="w-full md:w-1/2 bg-orange-300 bg-opacity-40 border-orange-500 border p-8 text-slate-800">
-            <h3 className="text-2xl">こんな方におすすめ！</h3>
+        <div className="w-full grid grid-cols-1  justify-center items-start gap-8 md:flex-row">
+          <div className="w-full bg-white p-8">
+            <h3 className="text-2xl mb-3"><span className="border-b-2 border-orange-300 px-2">自己紹介</span></h3>
+            <MarkdownComponent content={description} />
+          </div>
+          <div className="w-full bg-white p-8">
+            <h3 className="text-2xl mb-3"><span className="border-b-2 border-orange-300 px-2">こんな方にオススメ！</span></h3>
             <ul className="list-disc ml-8 mt-4">
               {lists.map((list, i) => <li key={i}>{list}</li>)}
             </ul>
+          </div>
+          <div className="w-full bg-white p-8">
+            <h3 className="text-2xl mb-3"><span className="border-b-2 border-orange-300 px-2">コメント</span></h3>
+            <MarkdownComponent content={other} />
+          </div>
+          <div className="w-full bg-orange-300 bg-opacity-40 border-orange-500 border p-8 text-slate-800">
+            <h3 className="text-2xl mb-3"><span className="border-b-2 border-white px-2">運営コメント</span></h3>
+            <MarkdownComponent content={operationComment} />
           </div>
         </div>
         <hr />

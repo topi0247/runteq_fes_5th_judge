@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET(req, { params }) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
+  const API_URL = process.env.API_URL || "";
   const res = await fetch(`${API_URL}?sheet=${params.id}`);
 
   if (!res.ok) {
