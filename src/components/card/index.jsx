@@ -17,7 +17,7 @@ export default function Card({ img, term, name, shortDescription, description, o
         <p>{shortDescription}</p>
         <hr />
         <div className="flex flex-col justify-center items-center gap-4 md:flex-row">
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex justify-center items-center gap-4 flex-wrap">
             {xUrl && <LinkButton href={xUrl} addLinkClass="px-4 py-2" target>X</LinkButton>}
             {timesUrl && <LinkButton href={timesUrl} addLinkClass="px-4 py-2" target>times</LinkButton>}
             {noteUrl && <LinkButton href={noteUrl} addLinkClass="px-4 py-2" target>Note</LinkButton>}
