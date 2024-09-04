@@ -1,4 +1,4 @@
-import { GoogleAnalytics } from "@runteq/nextjs-google-analytics";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Particle from "@/components/particle";
 import "./globals.css";
 import "./style.css";
