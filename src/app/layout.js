@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@runteq/nextjs-google-analytics";
 import Particle from "@/components/particle";
 import "./globals.css";
 import "./style.css";
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Particle />
         {children}
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
     </html>
   );
 }
